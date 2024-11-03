@@ -1,14 +1,14 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #fff4e6; /* Light warm color */
-  color: #5a3e36; /* Darker warm color */
+  background-color: #fff4e6;
+  color: #5a3e36;
   margin: 0;
   padding: 10px;
   width: auto;
 }
 
 h2 {
-  color: #8b4513; /* SaddleBrown color */
+  color: #8b4513;
   text-align: center;
 }
 
@@ -46,7 +46,7 @@ a:hover {
 }
 
 .delete-icon {
-  color: #ff6347; /* Tomato color */
+  color: #ff6347;
   cursor: pointer;
   margin-left: 10px;
 }
@@ -66,13 +66,13 @@ a:hover {
 }
 
 #deleteSelectedBtn:hover {
-  background-color: #ff4500; /* Darker red */
+  background-color: #ff4500;
 }
 
 #content {
-  max-width: 300px; /* Default width */
-  max-height: 400px; /* Default height */
-  overflow-y: auto; /* Enable vertical scrolling */
+  max-width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
   overflow-x: hidden;
-  transition: width 0.3s, height 0.3s; /* Smooth resizing */
+  transition: width 0.3s, height 0.3s;
 }

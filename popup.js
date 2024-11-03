@@ -1,12 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const historyList = document.getElementById("historyList");
   const deleteSelectedBtn = document.getElementById("deleteSelectedBtn");
-  const popupWidth = document.getElementById("popupWidth");
-  const popupHeight = document.getElementById("popupHeight");
-  const resizeBtn = document.getElementById("resizeBtn");
-  const content = document.getElementById("content");
 
-  // Retrieve history and display with delete options
+  // Retrieve and display history with delete options
   browser.storage.local.get("tempHistory").then((result) => {
     const tempHistory = result.tempHistory || [];
     tempHistory.forEach((entry, index) => {
@@ -25,9 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       link.addEventListener("click", (e) => {
         e.preventDefault();
-        browser.windows.create({
+        browser.tabs.create({
           url: entry.url,
-          incognito: true,
+          active: true,
         });
       });
 
@@ -48,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const tempHistory = result.tempHistory || [];
       tempHistory.splice(index, 1);
       browser.storage.local.set({ tempHistory });
-      location.reload(); // Refresh popup
+      location.reload();
     });
   }
 
@@ -69,13 +65,5 @@ document.addEventListener("DOMContentLoaded", () => {
       browser.storage.local.set({ tempHistory: newHistory });
       location.reload();
     });
-  });
-
-  // Resize content container based on user inputs
-  resizeBtn.addEventListener("click", () => {
-    const width = parseInt(popupWidth.value) || 300;
-    const height = parseInt(popupHeight.value) || 400;
-    content.style.width = `${width}px`;
-    content.style.height = `${height}px`;
   });
 });
