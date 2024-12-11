@@ -58,7 +58,7 @@ The extension respects the core function of incognito mode by keeping the tempor
 
 ## Screenshots
 
-will add soon
+![TempHistory Demo](./assets/TempHistory.gif)
 
 ## Future Improvements
 
